@@ -90,7 +90,10 @@ img {
 
 }
 
-
+form{
+    margin: 20 auto;
+    width: 320px; 
+}
 .info >h1{
     margin: -3px 0px;
     text-align: center;
