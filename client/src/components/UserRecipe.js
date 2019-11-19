@@ -121,7 +121,7 @@ class UserRecipe extends Component{
                             type='text'
                             value={this.state.ingredients}
                             onChange={this.handleChange}
-                            name='ingredients'/> 
+                            name='ingredients'/>Diet Type 
                         <select name='dietType' value={this.state.dietType} onChange={this.handleChange}>
                             <option placeholder= 'Diet Type'>Diet Type</option>    
                             <option value="Healthy">Healthy</option>

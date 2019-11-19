@@ -21,7 +21,7 @@ class Navbar extends Component{
           const {token, logout} = this.props
           return(
                <>
-                 <button className="menu" onClick={this.toggleMenu}>Menu</button>
+                 <button className="menu" onClick={this.toggleMenu}>Menu/Sign-in</button>
                     
                <div style={{visibility: (this.state.showNav ? "" : "hidden")}} className='nav-container'>
                     <div className='nav' onClick = {this.toggleMenu}>
