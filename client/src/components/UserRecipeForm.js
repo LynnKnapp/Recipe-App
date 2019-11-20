@@ -1,10 +1,6 @@
 import React from 'react'
 import UserRecipe from './UserRecipe.js'
 
-
-
-
-
 const UserRecipeForm = props =>{
     
         return(

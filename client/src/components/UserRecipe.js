@@ -33,22 +33,25 @@ class UserRecipe extends Component{
             showRecipes: !prevState.showRecipes
         }))
     }
-    
 
     handleChange = (e) =>{
-           
-       
         const {name, value} = e.target
         this.setState({
             [name]: value
         }) 
     }
 
+    handleIngredientsChange = (e) => {
+        const {value} = e.target
+        const updatedIngredientsArr = value.split(",")
+        this.setState({
+            ingredients: updatedIngredientsArr
+        })
+    }
     
     handleSubmit = e =>{
         e.preventDefault()
         const { name, author, description, imgUrl, ingredients, dietType } = this.state
-        
 
         const updateObj = {
             name: name,
@@ -60,14 +63,12 @@ class UserRecipe extends Component{
         }
 
             this.props.handleEdit(this.props._id, updateObj)
-        
-     
     }    
 
     render(){
 
         const mappedIngredients = this.state.ingredients.map(ingredient =>{
-            return <li>{ingredient}</li>
+            return <li key={ingredient}>{ingredient}</li>
         })
 
         return (
@@ -120,7 +121,7 @@ class UserRecipe extends Component{
                         <input
                             type='text'
                             value={this.state.ingredients}
-                            onChange={this.handleChange}
+                            onChange={this.handleIngredientsChange}
                             name='ingredients'/>Diet Type 
                         <select name='dietType' value={this.state.dietType} onChange={this.handleChange}>
                             <option placeholder= 'Diet Type'>Diet Type</option>    
