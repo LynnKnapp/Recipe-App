@@ -66,8 +66,8 @@ class Auth extends Component {
                             handleSubmit={this.handleLoginSubmit}
                             btnText='Login'
                         /> 
-                        <p style={{color: 'red'}}>{this.props.authErrMsg} </p>
                         <button className='toggler-btn' onClick={this.toggler}>I don't have an account</button>
+                        <p style={{color: 'red'}}>{this.props.authErrMsg} </p>
                     </>
                 }
             </div>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import UserRecipeList from './UserRecipeList.js'
 import UserRecipeForm from './UserRecipeForm.js'
+import ImageUpload from './ImageUpload.js'
 import axios from 'axios'
 
 
@@ -39,13 +40,6 @@ class MyRecipes extends Component{
                 showForm: !prevState.showForm
             }))
         }
-
-        // toggleMyRecipes = () => {
-        //     console.log('hello jerry')
-        //     return this.setState(prevState =>({
-        //         showRecipes: !prevState.showRecipes
-        //     }))
-        // }
         
         getRecipes = () =>{
             recipeAxios.get("/api/recipe/userRecipe")
@@ -109,7 +103,6 @@ class MyRecipes extends Component{
         }
 
     render(){  
-        // console.log('da form', this.state.showForm)
         return(
             <div className = 'myRecipe-container'>
                 { !this.state.showForm ?
@@ -120,10 +113,7 @@ class MyRecipes extends Component{
                                 recipes={this.state.recipes}
                                 handleDelete={this.handleDelete}
                                 handleEdit={this.handleEdit}
-                                
-
-                            /> 
-                           
+                            />   
                     </div>
                 </>
                 :
@@ -132,16 +122,19 @@ class MyRecipes extends Component{
                         <h2>Add a Favorite Recipe</h2>
                         <h3>Or Edit an Existing One</h3>
                         <button onClick={this.toggleForm}>Back to My Recipes</button>
+                        <ImageUpload
+                            />
                         <UserRecipeForm
                                 name ={this.state.name}
                                 author={this.state.author}
                                 description={this.state.description}
-                                imgUrl={this.state.imgUrl}
+                                // imgUrl={this.state.imgUrl}
                                 ingredients={this.state.ingredients}
                                 dietType={this.state.dietType}
                                 handleChange={this.handleChange}
                                 handleSubmit={this.handleSubmit}
                                 handleEdit={this.handleEdit}/>
+                        <ImageUpload/>        
                     </div>
                 </>
                 }    
