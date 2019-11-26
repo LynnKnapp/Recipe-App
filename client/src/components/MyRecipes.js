@@ -128,12 +128,13 @@ class MyRecipes extends Component{
                                 name ={this.state.name}
                                 author={this.state.author}
                                 description={this.state.description}
-                                imgUrl={this.state.imgUrl}
+                                // imgUrl={this.state.imgUrl}
                                 ingredients={this.state.ingredients}
                                 dietType={this.state.dietType}
                                 handleChange={this.handleChange}
                                 handleSubmit={this.handleSubmit}
                                 handleEdit={this.handleEdit}/>
+                        <ImageUpload/>        
                     </div>
                 </>
                 }    
