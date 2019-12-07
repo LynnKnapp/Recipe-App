@@ -12,7 +12,7 @@ app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
 
-mongoose.connect(process.env.MONGOLAB_PURPLE_URI || 'mongodb://localhost:27017/recipedb',
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/recipedb',
     {
         useNewUrlParser: true,
         useFindAndModify: false,
