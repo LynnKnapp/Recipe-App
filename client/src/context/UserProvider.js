@@ -30,16 +30,24 @@ class UserProvider extends Component {
     signup = credentials => {
         axios.post('/auth/signup', credentials)
             .then(res => {
+                // console.log(res)
+                // const push = this.history.push
                 const {user, token } = res.data //res.data comes from return res.status(201).send({token, user: savedUser})
                 localStorage.setItem('token', token)
                 localStorage.setItem('user', JSON.stringify(user))
-                this.setState({user, token, authErrMsg: ""}) //don't have to put key value pairs when using object literals here
+                this.setState({user, token, authErrMsg: ""}
+                // ,()=>{
+                //     alert('successfully signed up')
+                //     push('/healthy')
+                // }
+                ) //don't have to put key value pairs when using object literals here
             })
             .catch( err => this.handleAuthErr(err.response.data.errMsg))
 
     }
 
     handleAuthErr = errMsg => {
+        alert(errMsg)
         this.setState({authErrMsg: errMsg})
     }
 

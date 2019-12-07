@@ -5,14 +5,14 @@ const morgan = require("morgan")
 const mongoose = require("mongoose")
 const expressJwt = require("express-jwt")
 const path = require("path")
-const PORT = process.env.PORT || 7000
+const PORT = process.env.PORT || 7001
 
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/recipedb',
+mongoose.connect(process.env.MONGOLAB_PURPLE_URI || 'mongodb://localhost:27017/recipedb',
     {
         useNewUrlParser: true,
         useFindAndModify: false,
@@ -39,5 +39,5 @@ app.get("*", (req, res) =>{
 
 
 app.listen(PORT, () => {
-    console.log('server is running on PORT 7000')
+    console.log('server is running on PORT 7001')
 })

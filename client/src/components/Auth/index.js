@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import AuthForm from './AuthForm.js'
 import { withUser } from '../../context/UserProvider.js'
+import { Redirect } from 'react-router-dom'
 
 
 
@@ -20,6 +21,10 @@ class Auth extends Component {
 
     handleChange = e =>{
         const {name, value} = e.target
+        // ,()=>{
+            //     alert('successfully signed up')
+            //     push('/healthy')
+            // }
         this.setState({ [name]: value})
     }
 
@@ -30,6 +35,7 @@ class Auth extends Component {
             password: this.state.password
         }
         this.props.signup(creds)
+
     }
 
     handleLoginSubmit = e => {
@@ -43,6 +49,10 @@ class Auth extends Component {
 
 
     render(){
+        if(this.props.token){
+            return (<Redirect to='/' />)
+        }
+
         return(
             <div className= 'auth-form'>
                 { !this.state.toggle ? 

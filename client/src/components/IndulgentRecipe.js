@@ -15,6 +15,7 @@ const IndulgentRecipe = (props) =>{
                 <h4 className= 'text'>{props.author}</h4>
             </div>
             <div className='ingredients'>
+                <h3>Ingredients</h3>
                 <ul className= 'text'>{mappedIngredients}</ul>
             </div>
             

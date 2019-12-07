@@ -1,9 +1,5 @@
 import React from 'react'
 
-
-
-
-
 const AuthForm = props =>{
     const {username, password, handleChange, handleSubmit, btnText} = props
         return(

@@ -8,6 +8,7 @@ import IndulgentRecipesDisplay from './components/IndulgentRecipesDisplay.js'
 import MyRecipes from './components/MyRecipes.js'
 import UserRecipeForm from './components/UserRecipeForm.js'
 import Auth from './components/Auth'
+// import {firebase} from '../firebase/index.js'
 
 
 

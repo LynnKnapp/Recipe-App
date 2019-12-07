@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {storage} from '../firebase';
+import {storage} from './FirebaseConfig';
 
 class ImageUpload extends Component{
     constructor(props){
