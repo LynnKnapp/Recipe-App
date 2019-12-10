@@ -1,7 +1,10 @@
 *{
     margin: 0;
 }
-
+.app{
+    margin: 0;
+    padding: 0;
+}
 img {
     object-fit: cover;
     width: 70vw;
@@ -24,6 +27,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 10px;
+    padding: 0;
 }
 .nav{
     z-index: 35;
@@ -60,6 +65,8 @@ img {
     display:table-cell;
     vertical-align:middle; 
     padding-right: 60px;  
+    width: 100vw;
+    height: 42px;
 }
 
 .auth-form {
@@ -68,7 +75,7 @@ img {
     justify-content: center;
     align-items: center;
     margin-top: 0px;
-    padding: 80px 470px;
+    padding-top: 25px;
     
 }  
 .recipeform-container{
@@ -107,7 +114,12 @@ img {
 form{
     margin: 20 auto;
     width: 320px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 .info >h1{
     margin: -3px 0px;
     text-align: center;
@@ -144,7 +156,7 @@ form{
     font-size: 10pt;
     display: block;
     height: 34px;
-    width: 260px;
+    width: 40vw;
     border: solid 2px black;
     border-image: initial;
     border-radius: 4px;
@@ -225,6 +237,7 @@ form{
         margin: 0 auto;
         display: block;
     }
+    
     .recipe-container > h4{
         font-size: 17px;
         padding-top: 6px;   
@@ -273,7 +286,13 @@ form{
     .ingredient-container > h4 {
         font-size: 19px;
         margin-top: -39px;
-    }   
+    }  
+    .ingredient-container >ul{
+        font-size: 15px;
+        font-weight: bold;
+        padding-left: 25px;
+        padding-right: 10px;
+    } 
     #root>div>div.nav-container>div>button, .auth-form>button, .auth-form>form>input:nth-child(1n), .myRecipe-container>div>div>div:nth-child(1n)>div>form>:nth-child(1n), button, select {
     border: 2px solid black;
     border-radius: 4px;
@@ -286,8 +305,9 @@ form{
     .auth-form>button, .auth-form>form>input:nth-child(1n), .myRecipe-container>div>div>div:nth-child(1n)>div>form>:nth-child(1n), button, select {
         font-size: 9pt;
         font-weight: 600px;
-        height: 35px;
-        width: 170px;   
+        height: 27px;
+        width: 40vw;   
+        margin: 0;
     } 
     .selection{
         font-size: 9pt;
@@ -315,6 +335,7 @@ form{
         flex-direction: column;
         margin: auto;
     }
+    
 
 
 }
