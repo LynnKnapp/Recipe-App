@@ -1,1 +1,0 @@
-{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"recipedb.recipes"}],"uuid":"5ccd6565340b4bb0abfa43351e18df92"}
