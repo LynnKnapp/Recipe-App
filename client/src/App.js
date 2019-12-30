@@ -19,7 +19,7 @@ class App extends Component{
         const {token, logout} = this.props
         
         return(
-            <div> 
+            <div className= 'app'> 
                 <Navbar token ={token} logout ={logout}/>
                     <Switch>
                         <Route exact path='/' component={Home} />

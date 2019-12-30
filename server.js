@@ -12,7 +12,7 @@ app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, "client", "build")))
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/recipedb',
+mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost:27017/recipedb',
     {
         useNewUrlParser: true,
         useFindAndModify: false,
@@ -39,5 +39,5 @@ app.get("*", (req, res) =>{
 
 
 app.listen(PORT, () => {
-    console.log('server is running on PORT 7001')
+    console.log(`server is running on PORT ${PORT}`)
 })

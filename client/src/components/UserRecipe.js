@@ -89,7 +89,7 @@ class UserRecipe extends Component{
                         <button onClick={this.editToggler} 
                            >
                             Edit Recipe</button>
-                        <button onClick={this.toggleForm}>Add Recipe</button>
+                        {/* <button onClick={this.toggleForm}>Add Recipe</button> */}
                         <button onClick={ ()=> this.props.handleDelete(this.props._id)}>Delete Recipe</button>
         
                     </div> 
@@ -112,12 +112,12 @@ class UserRecipe extends Component{
                             type='text'
                             value={this.state.description}
                             onChange={this.handleChange}
-                            name='description'/>Image
-                        <input
+                            name='description'/>Ingredients
+                        {/* <input
                             type='url'
                             value={this.state.imgUrl}
                             onChange={this.handleChange}
-                            name='imgUrl'/>Ingredients
+                            name='imgUrl'/>Ingredients */}
                         <input
                             type='text'
                             value={this.state.ingredients}

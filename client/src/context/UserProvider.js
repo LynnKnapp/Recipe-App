@@ -34,6 +34,7 @@ class UserProvider extends Component {
             history.push('/')
         }
     }
+    
     login = credentials  =>{
         console.log('cred:', credentials)
         axios.post('/auth/login', credentials)
@@ -48,8 +49,8 @@ class UserProvider extends Component {
 
     }
 
-
     handleAuthErr = errMsg => {
+        alert(errMsg)
         this.setState({authErrMsg: errMsg})
     }
 
@@ -87,4 +88,4 @@ export const withUser = C => props => (
         { value => <C {...value} {...props}/> }
     </UserContext.Consumer>
 )
-   
+ 

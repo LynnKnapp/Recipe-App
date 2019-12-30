@@ -20,12 +20,12 @@ const UserRecipeForm = props =>{
                             type='text'
                             value={props.description}
                             onChange={props.handleChange}
-                            name='description'/>imgUrl
-                        <input
+                            name='description'/>Ingredients
+                        {/* <input
                             type='url'
                             value={props.imgUrl}
                             onChange={props.handleChange}
-                            name='imgUrl'/>Ingredients
+                            name='imgUrl'/>Ingredients */}
                         <input
                             type='text'
                             value={props.ingredients}
@@ -33,8 +33,8 @@ const UserRecipeForm = props =>{
                             name='ingredients'/> 
                         <select name='dietType' value={props.dietType} onChange={props.handleChange}>
                             <option placeholder= 'Diet Type'>Diet Type</option>    
-                            <option value="Healthy">Healthy</option>
-                            <option value="Indulgent">Indulgent</option>
+                            <option className = 'selection' value="Healthy">Healthy</option>
+                            <option className = 'selection' value="Indulgent">Indulgent</option>
                         </select>
                     <button onSubmit={props.handleSubmit}>Submit</button> 
                 </form>
