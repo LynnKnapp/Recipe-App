@@ -25,7 +25,7 @@ class Navbar extends Component{
                     
                <div style={{visibility: (this.state.showNav ? "" : "hidden")}} className='nav-container'>
                     <div className='nav' onClick = {this.toggleMenu}>
-                    <Link className = {this.props.location.pathname === "/" ? "active" : ""}
+                    <Link className = {this.props.location.pathname === "/" ? this.props.history.push("/") : ""}
                     
                     to="/">Home</Link>
                     <Link className = {this.props.location.pathname === "/healthy" ? "active" : ""}

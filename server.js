@@ -5,7 +5,7 @@ const morgan = require("morgan")
 const mongoose = require("mongoose")
 const expressJwt = require("express-jwt")
 const path = require("path")
-const PORT = process.env.PORT || 7000
+const PORT = process.env.PORT || 7001
 
 app.use(express.json())
 app.use(morgan('dev'))
@@ -39,5 +39,5 @@ app.get("*", (req, res) =>{
 
 
 app.listen(PORT, () => {
-    console.log('server is running on PORT 7000')
+    console.log('server is running on PORT 7001')
 })

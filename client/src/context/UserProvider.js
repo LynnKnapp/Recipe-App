@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import { BrowserRouter, Link, Redirect,useHistory} from 'react-router-dom'
 
 const UserContext = React.createContext()
 
@@ -9,10 +10,30 @@ class UserProvider extends Component {
         this.state={
             user: JSON.parse(localStorage.getItem('user')) || {},
             token: localStorage.getItem('token') || "",
-            authErrMsg: ""
+            authErrMsg: "",
+            isRegistered: false
         }
     }
+      
+    signup = credentials => {
+        axios.post('/auth/signup', credentials)
+            .then(res => {
+                const {user, token } = res.data //res.data comes from return res.status(201).send({token, user: savedUser})
+                localStorage.setItem('token', token)
+                localStorage.setItem('user', JSON.stringify(user))
+                this.setState({user, token, authErrMsg: "", }) //don't have to put key value pairs when using object literals here  
+            })
+            
+            .catch( err => this.handleAuthErr(err.response.data.errMsg))
 
+    }
+    isSignedUp =() =>{
+        const {isRegistered} = this.state
+        let history = useHistory()
+        if(!isRegistered) {
+            history.push('/')
+        }
+    }
     login = credentials  =>{
         console.log('cred:', credentials)
         axios.post('/auth/login', credentials)
@@ -27,17 +48,6 @@ class UserProvider extends Component {
 
     }
 
-    signup = credentials => {
-        axios.post('/auth/signup', credentials)
-            .then(res => {
-                const {user, token } = res.data //res.data comes from return res.status(201).send({token, user: savedUser})
-                localStorage.setItem('token', token)
-                localStorage.setItem('user', JSON.stringify(user))
-                this.setState({user, token, authErrMsg: ""}) //don't have to put key value pairs when using object literals here
-            })
-            .catch( err => this.handleAuthErr(err.response.data.errMsg))
-
-    }
 
     handleAuthErr = errMsg => {
         this.setState({authErrMsg: errMsg})

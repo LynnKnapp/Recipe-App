@@ -8,6 +8,7 @@ import IndulgentRecipesDisplay from './components/IndulgentRecipesDisplay.js'
 import MyRecipes from './components/MyRecipes.js'
 import UserRecipeForm from './components/UserRecipeForm.js'
 import Auth from './components/Auth'
+// import {firebase} from '../firebase/index.js'
 
 
 
@@ -21,7 +22,7 @@ class App extends Component{
             <div> 
                 <Navbar token ={token} logout ={logout}/>
                     <Switch>
-                        <Route exact path='/' component={Home}/>
+                        <Route exact path='/' component={Home} />
                         <Route path='/healthy' component={HealthyRecipesDisplay}/>
                         <Route path='/indulgent' component={IndulgentRecipesDisplay}/>
                         <Route path='/userRecipe' component={MyRecipes}/> 

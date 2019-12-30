@@ -199,6 +199,7 @@ form{
     align-items: center;
     padding-bottom: 40px;
     padding-top: 20px;
+    border: solid;
 }
 .recipe-container >h4{
     font-size: 25px;
@@ -233,6 +234,7 @@ form{
     }
     .recipe-container > h4{
         font-size: 17px;
+        
     }
     .info {
     position: relative;
