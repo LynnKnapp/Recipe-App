@@ -1,5 +1,8 @@
-import React, {Component} from 'react';
-import {storage} from './FirebaseConfig';
+import React, {Component} from 'react'
+import firebase from '../components/firebase'
+import {storage} from '../components/firebase'
+
+const ImageContext = React.createContext()
 
 class ImageUpload extends Component{
     constructor(props){
@@ -9,16 +12,13 @@ class ImageUpload extends Component{
             url: '',
             progress: 0
         }
-        this.handleChange = this
-        .handleChange
-        .bind(this);
-        this.handleUpload = this.handleUpload.bind(this)
+        
     }
     handleChange = e =>{
-        if(e.target.files[0]){
-            const {image} = e.target.files[0];
-            this.setState(() =>({image}));
-        }
+        const {name, value} = e.target
+        this.setState({
+            [name]: value
+        })
     }
     handleUpload = () =>{
         const {image} = this.state;
@@ -60,3 +60,9 @@ class ImageUpload extends Component{
     }
 }
 export default ImageUpload
+
+export const withUser = D => props => (
+    <ImageContext.Consumer>
+        { value => <D {...value} {...props}/> }
+    </ImageContext.Consumer>
+)

@@ -113,11 +113,11 @@ class UserRecipe extends Component{
                             value={this.state.description}
                             onChange={this.handleChange}
                             name='description'/>Ingredients
-                        {/* <input
+                        <input
                             type='url'
                             value={this.state.imgUrl}
                             onChange={this.handleChange}
-                            name='imgUrl'/>Ingredients */}
+                            name='imgUrl'/>Ingredients 
                         <input
                             type='text'
                             value={this.state.ingredients}

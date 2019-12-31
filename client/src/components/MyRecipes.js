@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import UserRecipeList from './UserRecipeList.js'
 import UserRecipeForm from './UserRecipeForm.js'
-// import ImageUpload from './ImageUpload.js'
+import { withUser } from '../context/ImageUpload.js'
+
 import axios from 'axios'
 
 
@@ -51,9 +52,7 @@ class MyRecipes extends Component{
             .catch(err =>console.log(err))
         }
 
-        handleChange = (e) =>{
-           
-            
+        handleChange = (e) =>{  
             const {name, value} = e.target
             this.setState({
                 [name]: value
@@ -131,7 +130,8 @@ class MyRecipes extends Component{
                                 dietType={this.state.dietType}
                                 handleChange={this.handleChange}
                                 handleSubmit={this.handleSubmit}
-                                handleEdit={this.handleEdit}/>
+                                handleEdit={this.handleEdit}
+                                handleUpload={this.props.handleUpload}/>
                       
                     </div>
                 </>
@@ -141,4 +141,4 @@ class MyRecipes extends Component{
     }
 }
 
-export default MyRecipes
+export default withUser (MyRecipes)
