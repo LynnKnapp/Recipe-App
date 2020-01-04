@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import UserRecipe from './UserRecipe.js'
-// import ImageUpload from './ImageUpload.js'
 
 
 const UserRecipeForm = props =>{
