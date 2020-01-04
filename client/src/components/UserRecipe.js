@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import UploadImage from './UploadImage'
+
 
 const recipeAxios = axios.create()
 
@@ -89,7 +91,8 @@ class UserRecipe extends Component{
                         <button onClick={this.editToggler} 
                            >
                             Edit Recipe</button>
-                        {/* <button onClick={this.toggleForm}>Add Recipe</button> */}
+                        <button onClick={this.props.sendMessage} disabled={this.props.loading}>Add Recipe</button>
+                        
                         <button onClick={ ()=> this.props.handleDelete(this.props._id)}>Delete Recipe</button>
         
                     </div> 

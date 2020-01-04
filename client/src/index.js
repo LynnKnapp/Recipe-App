@@ -3,16 +3,18 @@ import ReactDOM from "react-dom"
 import App from './App.js'
 import { BrowserRouter } from 'react-router-dom'
 import UserProvider from './context/UserProvider.js'
-import ImageUpload from './context/ImageUpload'
+import ImageUpload from './components/ImageUpload'
 import "./styles.css"
+import UserRecipeForm from './components/UserRecipeForm.js'
+
 
 
 ReactDOM.render(
     <BrowserRouter>  
         <UserProvider>
-            <ImageUpload>
+            <UserRecipeForm>
                 <App/>
-            </ImageUpload>
+            </UserRecipeForm>
         </UserProvider>
     </BrowserRouter> ,
     document.getElementById('root'))

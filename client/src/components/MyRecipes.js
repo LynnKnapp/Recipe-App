@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import UserRecipeList from './UserRecipeList.js'
 import UserRecipeForm from './UserRecipeForm.js'
-import { withUser } from '../context/ImageUpload.js'
+// import { withUser } from '../context/ImageUpload.js'
 
 import axios from 'axios'
 
@@ -125,13 +125,15 @@ class MyRecipes extends Component{
                                 name ={this.state.name}
                                 author={this.state.author}
                                 description={this.state.description}
-                                // imgUrl={this.state.imgUrl}
+                                img src={this.props.imageAsUrl.imgUrl}
                                 ingredients={this.state.ingredients}
                                 dietType={this.state.dietType}
                                 handleChange={this.handleChange}
                                 handleSubmit={this.handleSubmit}
                                 handleEdit={this.handleEdit}
-                                handleUpload={this.props.handleUpload}/>
+                                handleUpload={this.props.handleUpload}
+                                handleFireBaseUpload={this.props.handleFireBaseUpload}
+                                handleImageAsFile={this.props.handleImageAsFile}/>
                       
                     </div>
                 </>
@@ -141,4 +143,4 @@ class MyRecipes extends Component{
     }
 }
 
-export default withUser (MyRecipes)
+export default MyRecipes
