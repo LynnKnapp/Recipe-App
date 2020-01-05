@@ -60,7 +60,7 @@ class MyRecipes extends Component{
                 [name]: value
             }) 
         }
-
+        //this is to post a recipe to the database
         handleSubmit = e =>{
             e.preventDefault()
             const { name, author, description, imgUrl, ingredients, dietType } = this.state
