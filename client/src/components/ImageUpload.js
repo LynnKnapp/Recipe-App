@@ -1,14 +1,13 @@
 import React ,{useState}from 'react'
-import {storage} from './firebase/firebase'
-import { PromiseProvider } from 'mongoose'
+import {storage} from './firebase'
 
-export const ImageContext = React.createContext()
 
-   function ImageUploadProvider(props) {
+
+   function ImageUpload(props) {
 
     const allInputs = {imgUrl: ''}
-    const [imageAsFile, setImageAsFile] = useState('')
     const [imageAsUrl, setImageAsUrl] = useState(allInputs)
+    const [imageAsFile, setImageAsFile] = useState('')
 
     console.log(imageAsFile)
 
@@ -46,29 +45,22 @@ export const ImageContext = React.createContext()
   
 
     return (
-      <div className="App">
-        <form onSubmit={handleFireBaseUpload}>
-          <input 
-            type="file"
-            onChange={handleImageAsFile}
-          />
-        <button>Upload Image</button>
-        </form>
-        <img src={imageAsUrl.imgUrl} alt="image_tag" />
-      </div>
-    );
-    <ImageContext.Provider
-        value={{
-            allInputs,
-            handleImageAsFile,
-            handleFireBaseUpload,
-            uploadTask
-        }}>
-        {props.children}
-    </ImageContext.Provider>
+        <div className="App">
+            <form onSubmit={handleFireBaseUpload}>
+            <input 
+                type="file"
+                onChange={handleImageAsFile}
+            />
+            <button>Upload Image</button>
+            </form>
+            <img src={imageAsUrl.imgUrl} alt="image_tag" />
+   
+        </div>
+    )
+    
   }
 
-  export default ImageUploadProvider
+  export default ImageUpload
 
   
  

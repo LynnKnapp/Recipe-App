@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import UserRecipeList from './UserRecipeList.js'
 import UserRecipeForm from './UserRecipeForm.js'
-// import { withUser } from '../context/ImageUpload.js'
+import ImageUpload from './ImageUpload.js'
 
 import axios from 'axios'
 
@@ -15,9 +15,11 @@ recipeAxios.interceptors.request.use((config)=>{
 })
 
 
+
+
 class MyRecipes extends Component{
-        constructor(){
-            super()
+        constructor(props){
+            super(props)
             this.state={
                 name: "",
                 author: "",
@@ -131,10 +133,9 @@ class MyRecipes extends Component{
                                 handleChange={this.handleChange}
                                 handleSubmit={this.handleSubmit}
                                 handleEdit={this.handleEdit}
-                                handleUpload={this.props.handleUpload}
-                                handleFireBaseUpload={this.props.handleFireBaseUpload}
-                                handleImageAsFile={this.props.handleImageAsFile}/>
-                      
+                                // handleFireBaseUpload={this.props.handleFireBaseUpload}
+                                // handleImageAsFile={this.props.handleImageAsFile}
+                        />
                     </div>
                 </>
                 }    

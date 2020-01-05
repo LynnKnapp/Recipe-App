@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import AuthForm from './AuthForm.js'
-import { withUser } from '../../context/UserProvider.js'
+import { UserContext, withUser } from '../../context/UserProvider.js'
 import { Redirect } from 'react-router-dom'
 
 
@@ -49,6 +49,7 @@ class Auth extends Component {
 
 
     render(){
+        console.log(this.props)
         if(this.props.token){
             return (<Redirect to='/' />)
         }

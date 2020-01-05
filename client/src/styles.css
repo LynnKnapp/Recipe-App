@@ -5,6 +5,17 @@
     margin: 0;
     padding: 0;
 }
+.form{
+    border: solid black 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+input [type=text]{
+    width: 40px;
+}
 img {
     object-fit: cover;
     width: 70vw;
@@ -80,9 +91,20 @@ img {
 }  
 .recipeform-container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }  
+.firebase-images{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    margin-top: 30px;
+
+}
 .myRecipe-container > div > div > div:nth-child(1n) > div > form > :nth-child(1n),
 .auth-form > button, .auth-form > form > input:nth-child(1n), button, select {
     border: 2px solid black;
@@ -156,13 +178,93 @@ form{
     font-size: 10pt;
     display: block;
     height: 34px;
-    width: 40vw;
+    width: 20vw;
     border: solid 2px black;
     border-image: initial;
     border-radius: 4px;
     padding: 8px;
     margin-right: 61px;
 }
+.recipeform-container > form > input[type=text]:nth-child(1){
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    text-align: center;
+    font-size: 13px;
+}    
+.recipeform-container > form > input[type=text]:nth-child(2){
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    text-align: center;
+    font-size: 13px;
+}
+.recipeform-container > form > input[type=text]:nth-child(3){
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    text-align: center;
+    font-size: 13px;
+}
+.recipeform-container > form > input[type=text]:nth-child(4){
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    text-align: center;
+    font-size: 13px;
+}
+.recipeform-container > form > select{
+    width: 100%;
+    /* padding: 12px; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 11px;
+    text-indent: 125px;
+    margin-left: 60px;
+    
+
+}
+
+.recipeform-container > form > button{
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: white;
+    padding: 14px 28px;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+    /* border: solid 2px black; */
+    margin-left: 60px;
+    
+} 
+.recipeform-container > div > form > button{
+    display: block;
+    width: 90%;
+    border: none;
+    background-color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 60px;
+    margin-top: 10px; 
+}
+
 .info {
     position: relative;
     color: white;

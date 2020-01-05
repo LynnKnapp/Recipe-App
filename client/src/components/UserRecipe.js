@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import UploadImage from './UploadImage'
+import UserRecipeList from './UserRecipeList'
+import {Link} from 'react-router-dom'
 
 
 const recipeAxios = axios.create()
@@ -23,18 +24,18 @@ class UserRecipe extends Component{
             name: props.name,
             author: props.author,
             description: props.description,
-            imgUrl: props.imgUrl,
+            imageAsUrl: props.imgUrl,
             ingredients: props.ingredients,
             dietType: props.dietType,
         }
     }
 
-    editToggler = () => {
-        console.log('edit Toggler')
-        return this.setState(prevState =>({
-            showRecipes: !prevState.showRecipes
-        }))
-    }
+    // editToggler = () => {
+    //     console.log('edit Toggler')
+    //     return this.setState(prevState =>({
+    //         showRecipes: !prevState.showRecipes
+    //     }))
+    // }
 
     handleChange = (e) =>{
         const {name, value} = e.target
@@ -65,6 +66,8 @@ class UserRecipe extends Component{
         }
 
             this.props.handleEdit(this.props._id, updateObj)
+
+
     }    
 
     render(){
@@ -75,8 +78,7 @@ class UserRecipe extends Component{
 
         return (
             <div className='recipe-container'>
-                {!this.state.showRecipes ?
-                <>    
+                  
                     <img src={this.props.imgUrl} alt='recipe'/>
                         <h4>Author: {this.props.author}</h4>
                     <div className='info'>
@@ -88,54 +90,11 @@ class UserRecipe extends Component{
                         <ul>{mappedIngredients}</ul>
                     </div>
                     <div className='buttons'>
-                        <button onClick={this.editToggler} 
-                           >
-                            Edit Recipe</button>
-                        <button onClick={this.props.sendMessage} disabled={this.props.loading}>Add Recipe</button>
-                        
+                        <Link to={{pathname: '/userRecipeForm'}}><button>Add/Delete Recipes</button></Link>
+                    
                         <button onClick={ ()=> this.props.handleDelete(this.props._id)}>Delete Recipe</button>
         
                     </div> 
-                </> 
-                :
-                <>
-                <div className='recipeform-container'>
-                    <form className= 'recipe-form' onSubmit={this.handleSubmit}>
-                        Recipe Name<input
-                            type='text'
-                            value={this.state.name}
-                            onChange={this.handleChange}
-                            name='name'/> Author
-                        <input
-                            type='text'
-                            value={this.state.author}
-                            onChange={this.handleChange}
-                            name='author'/> Description
-                        <input
-                            type='text'
-                            value={this.state.description}
-                            onChange={this.handleChange}
-                            name='description'/>Ingredients
-                        <input
-                            type='url'
-                            value={this.state.imgUrl}
-                            onChange={this.handleChange}
-                            name='imgUrl'/>Ingredients 
-                        <input
-                            type='text'
-                            value={this.state.ingredients}
-                            onChange={this.handleIngredientsChange}
-                            name='ingredients'/>Diet Type 
-                        <select name='dietType' value={this.state.dietType} onChange={this.handleChange}>
-                            <option placeholder= 'Diet Type'>Diet Type</option>    
-                            <option value="Healthy">Healthy</option>
-                            <option value="Indulgent">Indulgent</option>
-                        </select>
-                    <button>Submit</button> 
-                    </form>
-                </div>
-                </>
-                }
             </div>
         )
     }    

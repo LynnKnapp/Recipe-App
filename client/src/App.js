@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Switch, Route} from 'react-router-dom'
-import {withUser} from './context/UserProvider.js'
 import Navbar from './components/Navbar.js'
 import Home from './components/Home.js'
 import HealthyRecipesDisplay from './components/HealthyRecipesDisplay.js'
@@ -8,7 +7,8 @@ import IndulgentRecipesDisplay from './components/IndulgentRecipesDisplay.js'
 import MyRecipes from './components/MyRecipes.js'
 import UserRecipeForm from './components/UserRecipeForm.js'
 import Auth from './components/Auth'
-// import {firebase} from '../firebase/index.js'
+import ImageUpload from './components/ImageUpload.js'
+
 
 
 
@@ -26,10 +26,12 @@ class App extends Component{
                         <Route path='/healthy' component={HealthyRecipesDisplay}/>
                         <Route path='/indulgent' component={IndulgentRecipesDisplay}/>
                         <Route path='/userRecipe' component={MyRecipes}/> 
-                        <Route exact path = "/register" render={rProps => <Auth {...rProps}/>}/>
+                        <Route path='/userRecipeForm' component={UserRecipeForm}/>
+                        <Route exact path = "/register" render={rProps => <Auth {...rProps}/>}
+                        />
                     </Switch>             
             </div>
         ) 
     }
 }
-export default withUser(App)
+export default App
