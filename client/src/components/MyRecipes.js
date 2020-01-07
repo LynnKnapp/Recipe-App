@@ -14,9 +14,6 @@ recipeAxios.interceptors.request.use((config)=>{
     return config
 })
 
-
-
-
 class MyRecipes extends Component{
         constructor(props){
             super(props)
@@ -133,8 +130,6 @@ class MyRecipes extends Component{
                                 handleChange={this.handleChange}
                                 handleSubmit={this.handleSubmit}
                                 handleEdit={this.handleEdit}
-                                // handleFireBaseUpload={this.props.handleFireBaseUpload}
-                                // handleImageAsFile={this.props.handleImageAsFile}
                         />
                     </div>
                 </>

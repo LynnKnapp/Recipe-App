@@ -1,12 +1,12 @@
 import React from 'react'
-import UserRecipe from './UserRecipe.js'
+import AddRecipe from './AddRecipe.js'
 import UserRecipeForm from './UserRecipeForm.js'
 import MyRecipes from './MyRecipes.js'
 
 
 const UserRecipeList = (props) => {
     const mappedRecipes = props.recipes.map(recipe => {
-         return      <UserRecipe
+         return      <AddRecipe
                     key={recipe._id}
                     {...recipe}
                     _id={recipe._id}

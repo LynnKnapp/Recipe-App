@@ -1,45 +1,10 @@
 import React ,{ useState }from 'react'
-import UserRecipe from './UserRecipe.js'
-import {storage} from './firebase'
+import UserRecipe from './AddRecipe.js'
 import {Link} from 'react-router-dom'
 
 
 function UserRecipeForm (props) {
-    const allInputs = {imgUrl: ''}
-    const [imageAsUrl, setImageAsUrl] = useState(allInputs)
-    const [imageAsFile, setImageAsFile] = useState('')
-    
-    console.log(imageAsFile)
-    
-    const handleImageAsFile = (e) => {
-        const image = e.target.files[0]
-        setImageAsFile(imageFile => (image))
-    }
-
-    const handleFireBaseUpload = e => {
-        e.preventDefault()
-        console.log('start of upload')
-
-        if(imageAsFile === '') {
-            console.error(`not an image, the image file is a ${typeof(imageAsFile)}`)
-      }
-      const uploadTask = storage.ref(`/images/${imageAsFile.name}`).put(imageAsFile)
-      
-      uploadTask.on('state_changed', 
-      (snapShot) => {
-        
-        console.log(snapShot)
-      }, (err) => {
-        
-        console.log(err)
-      }, () => {
-        
-        storage.ref('images').child(imageAsFile.name).getDownloadURL()
-         .then(fireBaseUrl => {
-           setImageAsUrl(prevObject => ({...prevObject, imgUrl: fireBaseUrl}))
-         })
-      })
-    }
+  
   
     return (
         
@@ -75,18 +40,7 @@ function UserRecipeForm (props) {
                         <option className = 'selection' value="Indulgent">Indulgent</option>
                     </select>
                      <button>Submit</button>  
-                 </form> 
-                 <div className='firebase-images'>  
-                     <form onSubmit={handleFireBaseUpload}>
-                    <input  
-                        type="file"
-                        onChange={handleImageAsFile}
-                     />
-                    <button>Upload Recipe Image</button>
-                    </form> 
-                     <Link to={{pathname: '/myRecipes'} }><button>Post to My Recipes</button></Link>
-                    <img src={imageAsUrl.imgUrl} alt="image_tag" style={{width: 300, height: 300}}/>  
-                  </div>        
+                 </form>        
          </div>       
     )
 } 
