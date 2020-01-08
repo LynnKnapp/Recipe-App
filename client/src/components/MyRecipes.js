@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-import UserRecipeList from './UserRecipeList.js'
-import UserRecipeForm from './UserRecipeForm.js'
-import ImageUpload from './ImageUpload.js'
+import MyRecipeList from './MyRecipeList.js'
+import MyRecipeForm from './MyRecipeForm.js'
 
 import axios from 'axios'
 
@@ -13,6 +12,9 @@ recipeAxios.interceptors.request.use((config)=>{
     config.headers.Authorization = `Bearer ${token}`
     return config
 })
+
+
+
 
 class MyRecipes extends Component{
         constructor(props){
@@ -57,7 +59,7 @@ class MyRecipes extends Component{
                 [name]: value
             }) 
         }
-        //this is to post a recipe to the database
+
         handleSubmit = e =>{
             e.preventDefault()
             const { name, author, description, imgUrl, ingredients, dietType } = this.state
@@ -71,7 +73,8 @@ class MyRecipes extends Component{
                     imgUrl: "",
                     ingredients: "",
                     dietType: "",
-                    recipes: [...prevState.recipes, res.data ]
+                    recipes: [...prevState.recipes, res.data ],
+                    showForm: false
                 }))
             })
             .catch(err => console.log(err))
@@ -107,7 +110,7 @@ class MyRecipes extends Component{
                 <>    
                     <div className = 'myRecipes'> 
                             <h1>My Recipes</h1> 
-                            <UserRecipeList 
+                            <MyRecipeList 
                                 recipes={this.state.recipes}
                                 handleDelete={this.handleDelete}
                                 handleEdit={this.handleEdit}
@@ -120,7 +123,7 @@ class MyRecipes extends Component{
                         <h2>Add a Favorite Recipe</h2>
                         <h3>Or Edit an Existing One</h3>
                         <button onClick={this.toggleForm}>Back to My Recipes</button>
-                        <UserRecipeForm
+                        <MyRecipeForm
                                 name ={this.state.name}
                                 author={this.state.author}
                                 description={this.state.description}

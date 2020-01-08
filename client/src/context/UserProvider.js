@@ -3,6 +3,13 @@ import axios from 'axios'
 import { BrowserRouter, Link, Redirect,useHistory} from 'react-router-dom'
 
 const UserContext = React.createContext()
+const userAxios = axios.create()
+
+userAxios.interceptors.request.use((config) => {
+    const token = localStorage.getItem("token")
+    config.headers.Authorization = `Bearer ${token}`
+    return config
+})
 
 class UserProvider extends Component {
     constructor() {
@@ -11,9 +18,10 @@ class UserProvider extends Component {
             user: JSON.parse(localStorage.getItem('user')) || {},
             token: localStorage.getItem('token') || "",
             authErrMsg: "",
-            isRegistered: false
+            // isRegistered: false
         }
     }
+
       
     signup = credentials => {
         axios.post('/auth/signup', credentials)
@@ -21,19 +29,23 @@ class UserProvider extends Component {
                 const {user, token } = res.data //res.data comes from return res.status(201).send({token, user: savedUser})
                 localStorage.setItem('token', token)
                 localStorage.setItem('user', JSON.stringify(user))
-                this.setState({user, token, authErrMsg: "", }) //don't have to put key value pairs when using object literals here  
+                this.setState(prevState => ({
+                        ...prevState,
+                        user: user,
+                        token: token
+                    }) 
+                )
             })
-            
             .catch( err => this.handleAuthErr(err.response.data.errMsg))
 
     }
-    isSignedUp =() =>{
-        const {isRegistered} = this.state
-        let history = useHistory()
-        if(!isRegistered) {
-            history.push('/')
-        }
-    }
+    // isSignedUp =() =>{
+    //     const {isRegistered} = this.state
+    //     // let history = useHistory()
+    //     // if(!isRegistered) {
+    //     //     history.push('/')
+        
+    // }
     
     login = credentials  =>{
         console.log('cred:', credentials)
@@ -43,15 +55,23 @@ class UserProvider extends Component {
                 const {user, token } = res.data //res.data comes from return res.status(201).send({token, user: savedUser})
                 localStorage.setItem('token', token)
                 localStorage.setItem('user', JSON.stringify(user))
-                this.setState({user, token, authErrMsg: ""}) //don't have to put key value pairs when using object literals here
-            })
+                this.setState(prevState => ({
+                        ...prevState,
+                        user: user,
+                        token: token,
+                    }) 
+                )
+                })    
             .catch( err => this.handleAuthErr(err.response.data.errMsg))
 
     }
 
     handleAuthErr = errMsg => {
         alert(errMsg)
-        this.setState({authErrMsg: errMsg})
+        this.setState(prevState =>({
+            ...prevState,
+            authErrMsg: errMsg
+        }))
     }
 
     logout = () => {
@@ -62,9 +82,7 @@ class UserProvider extends Component {
             token: ''
         })
         console.log("you are logged out")
-
     }
-
 
     render(){
         return(

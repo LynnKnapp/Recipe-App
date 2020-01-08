@@ -6,7 +6,7 @@
     padding: 0;
 }
 .form{
-    border: solid black 5px;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,9 +17,11 @@ input [type=text]{
     width: 40px;
 }
 img {
+    height: 300px;
+    width: 300px;
     object-fit: cover;
     width: 70vw;
-    border: solid 5px black;
+
     border-radius: 12px;
 }
 
@@ -215,6 +217,7 @@ form{
     text-align: center;
     font-size: 13px;
 }
+
 .recipeform-container > form > input[type=text]:nth-child(4){
     width: 100%;
     padding: 12px;

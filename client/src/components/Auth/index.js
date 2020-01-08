@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import AuthForm from './AuthForm.js'
-import { UserContext, withUser } from '../../context/UserProvider.js'
+import {  withUser } from '../../context/UserProvider.js'
 import { Redirect } from 'react-router-dom'
 
 
@@ -21,10 +21,6 @@ class Auth extends Component {
 
     handleChange = e =>{
         const {name, value} = e.target
-        // ,()=>{
-            //     alert('successfully signed up')
-            //     push('/healthy')
-            // }
         this.setState({ [name]: value})
     }
 
@@ -35,6 +31,7 @@ class Auth extends Component {
             password: this.state.password
         }
         this.props.signup(creds)
+        this.clearInputs()
 
     }
 
@@ -45,15 +42,21 @@ class Auth extends Component {
             password: this.state.password
         }
         this.props.login(creds)
+        this.clearInputs()
+    }
+    clearInputs = () => {
+        this.setState({
+            username: '',
+            password: ''
+        })
     }
 
 
     render(){
         console.log(this.props)
         if(this.props.token){
-            return (<Redirect to='/' />)
+            return(<Redirect to='/' />)
         }
-
         return(
             <div className= 'auth-form'>
                 { !this.state.toggle ? 
@@ -66,7 +69,7 @@ class Auth extends Component {
                             btnText='Sign Up'
                         />
                         <p style={{color: 'blue'}}>{this.props.authErrMsg} </p>
-                        <button  className='toggler-btn' onClick={this.toggler}>I already have an account</button>
+                        <button  className='toggler-btn' onClick={this.toggler}>Already have an account?</button>
                     </>
                 : 
                     <>
@@ -77,7 +80,7 @@ class Auth extends Component {
                             handleSubmit={this.handleLoginSubmit}
                             btnText='Login'
                         /> 
-                        <button className='toggler-btn' onClick={this.toggler}>I don't have an account</button>
+                        <button className='toggler-btn' onClick={this.toggler}> Sign-up for an account</button>
                         <p style={{color: 'red'}}>{this.props.authErrMsg} </p>
                     </>
                 }
