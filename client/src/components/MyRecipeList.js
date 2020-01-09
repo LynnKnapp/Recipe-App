@@ -1,12 +1,11 @@
 import React from 'react'
-import Recipe from './MyRecipe.js'
-import MyRecipeForm from './MyRecipeForm.js'
-import MyRecipes from './MyRecipes.js'
+// import MyRecipeForm from './MyRecipeForm.js'
+import UserRecipe from './UserRecipe'
 
 
-const UserRecipeList = (props) => {
+const MyRecipeList = (props) => {
     const mappedRecipes = props.recipes.map(recipe => {
-         return      <Recipe
+         return      <UserRecipe
                     key={recipe._id}
                     {...recipe}
                     _id={recipe._id}
@@ -22,5 +21,5 @@ const UserRecipeList = (props) => {
         )
 }         
 
-export default UserRecipeList
+export default MyRecipeList
 

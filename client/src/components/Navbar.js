@@ -34,13 +34,13 @@ class Navbar extends Component{
                          <Link className = {this.props.location.pathname === "/indulgent" ? "active" : ""}
                          to="/indulgent">Indulgent Recipes</Link>
 
-                         <Link className = {this.props.location.pathname === "/userRecipe" ? "active" : ""} 
-                         to="/userRecipe">My Recipes</Link>
+                         <Link className = {this.props.location.pathname === "/userrecipe" ? "active" : ""} 
+                         to="/userrecipe">My Recipes</Link>
 
                          <Link className = {this.props.location.pathname === "/register" ? "active" : ""} 
                          to= "register">SignIn / Register</Link>
 
-                         <Link exact to ='/' onClick ={logout}>Logout</Link>
+                         { token !== "" && <button onClick = {logout}>Logout</button>}
                     </div>
                </div>
               </> 

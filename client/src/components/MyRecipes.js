@@ -59,9 +59,9 @@ class MyRecipes extends Component{
             }) 
         }
 
-        handleSubmit = e =>{
+        handleSubmit = (e, imgUrl) =>{
             e.preventDefault()
-            const { name, author, description, imgUrl, ingredients, dietType } = this.state
+            const { name, author, description, ingredients, dietType } = this.state
             const newRecipe = { name, author, description, imgUrl, ingredients, dietType }
             recipeAxios.post('/api/recipe/userRecipe', newRecipe)
             .then(res =>{
@@ -107,8 +107,15 @@ class MyRecipes extends Component{
             <div className = 'myRecipe-container'>
                 { !this.state.showForm ?
                 <>    
-                    <div className = 'myRecipes'> 
-                            <h1>My Recipes</h1> 
+                    <div className ='myRecipes'>
+                        <div className='header-container'>
+                            <div className ='header'> 
+                                <h1>My Recipes</h1> 
+                            </div> 
+                            <div className='button'>  
+                                <button onClick={this.toggleForm}>Add Recipe</button>
+                            </div> 
+                        </div>   
                             <MyRecipeList 
                                 recipes={this.state.recipes}
                                 handleDelete={this.handleDelete}

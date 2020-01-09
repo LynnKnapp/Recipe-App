@@ -319,14 +319,32 @@ form{
    font-size: 12px;
    padding-bottom: 5px;
 }
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.header {
+    display: flex;
+    font-size: 4rem;
+    margin-top: 50px;
+    text-align: center;
+}
+.button{
+    font-size: 1rem;
+    margin-top: 50px;
+    text-align: center;
+}
+
+
 .indulgent-cont >h1{
     
-        font-size: 5rem;
+        font-size: 4rem;
         margin-top: 50px;
         text-align: center;
 }
 .healthy-display >h1{
-    font-size: 5rem;
+    font-size: 4rem;
     margin-top: 50px;
     text-align: center;
 }

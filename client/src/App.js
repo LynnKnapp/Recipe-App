@@ -1,16 +1,14 @@
 import React, {Component} from 'react'
 import {Switch, Route} from 'react-router-dom'
+import {withUser} from './context/UserProvider.js'
 import Navbar from './components/Navbar.js'
 import Home from './components/Home.js'
 import HealthyRecipesDisplay from './components/HealthyRecipesDisplay.js'
 import IndulgentRecipesDisplay from './components/IndulgentRecipesDisplay.js'
+// import UserRecipe from './components/UserRecipe.js'
+// import UserRecipeForm from './components/UserRecipeForm.js'
 import MyRecipes from './components/MyRecipes.js'
-import MyRecipeForm from './components/MyRecipeForm.js'
 import Auth from './components/Auth'
-import ImageUpload from './components/ImageUpload.js'
-
-
-
 
 
 class App extends Component{
@@ -25,8 +23,8 @@ class App extends Component{
                         <Route exact path='/' component={Home} />
                         <Route path='/healthy' component={HealthyRecipesDisplay}/>
                         <Route path='/indulgent' component={IndulgentRecipesDisplay}/>
-                        <Route path='/MyRecipe' component={MyRecipes}/> 
-                        <Route path='/MyRecipeForm' component={MyRecipeForm}/>
+                        <Route path='/userrecipe' component={MyRecipes}/> 
+                        {/*<Route path='/userrecipeform' component={UserRecipeForm}/>*/}
                         <Route exact path = "/register" render={rProps => <Auth {...rProps}/>}
                         />
                     </Switch>             
@@ -34,4 +32,4 @@ class App extends Component{
         ) 
     }
 }
-export default App
+export default withUser(App)

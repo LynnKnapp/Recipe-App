@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import { BrowserRouter, Link, Redirect,useHistory} from 'react-router-dom'
+
 
 const UserContext = React.createContext()
 const userAxios = axios.create()
@@ -18,7 +18,7 @@ class UserProvider extends Component {
             user: JSON.parse(localStorage.getItem('user')) || {},
             token: localStorage.getItem('token') || "",
             authErrMsg: "",
-            // isRegistered: false
+            
         }
     }
 
@@ -30,22 +30,16 @@ class UserProvider extends Component {
                 localStorage.setItem('token', token)
                 localStorage.setItem('user', JSON.stringify(user))
                 this.setState(prevState => ({
-                        ...prevState,
                         user: user,
-                        token: token
+                        token: token,
+                        authErrMsg: ''
                     }) 
                 )
             })
             .catch( err => this.handleAuthErr(err.response.data.errMsg))
 
     }
-    // isSignedUp =() =>{
-    //     const {isRegistered} = this.state
-    //     // let history = useHistory()
-    //     // if(!isRegistered) {
-    //     //     history.push('/')
-        
-    // }
+   
     
     login = credentials  =>{
         console.log('cred:', credentials)
@@ -56,9 +50,9 @@ class UserProvider extends Component {
                 localStorage.setItem('token', token)
                 localStorage.setItem('user', JSON.stringify(user))
                 this.setState(prevState => ({
-                        ...prevState,
                         user: user,
                         token: token,
+                        authErrMsg: ''
                     }) 
                 )
                 })    
@@ -69,7 +63,6 @@ class UserProvider extends Component {
     handleAuthErr = errMsg => {
         alert(errMsg)
         this.setState(prevState =>({
-            ...prevState,
             authErrMsg: errMsg
         }))
     }
