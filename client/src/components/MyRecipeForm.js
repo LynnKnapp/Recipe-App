@@ -92,7 +92,7 @@ function UserRecipeForm (props) {
                     <button>Upload Recipe Image</button>
                     </form>
                     <img src={imageAsUrl.imgUrl} alt="image_tag" style={{width: 300, height: 300}}/> 
-                    <Link to={{pathname: '/myRecipes', }}><button>Post to My Recipes</button></Link>
+                    {/* <Link to={{pathname: '/myRecipes', }}><button>Post to My Recipes</button></Link> */}
                 </div>      
             </div>      
     )      

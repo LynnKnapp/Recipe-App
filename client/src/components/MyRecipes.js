@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import MyRecipeList from './MyRecipeList.js'
 import MyRecipeForm from './MyRecipeForm.js'
-
 import axios from 'axios'
 
 
@@ -74,7 +73,7 @@ class MyRecipes extends Component{
                     ingredients: "",
                     dietType: "",
                     recipes: [...prevState.recipes, res.data ],
-                    showForm: false
+                    // showForm: false
                 }))
             })
             .catch(err => console.log(err))
@@ -127,7 +126,7 @@ class MyRecipes extends Component{
                                 name ={this.state.name}
                                 author={this.state.author}
                                 description={this.state.description}
-                                img src={this.props.imageAsUrl.imgUrl}
+                                // img src={this.props.imageAsUrl.imgUrl}
                                 ingredients={this.state.ingredients}
                                 dietType={this.state.dietType}
                                 handleChange={this.handleChange}

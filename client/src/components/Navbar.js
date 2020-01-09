@@ -25,22 +25,22 @@ class Navbar extends Component{
                     
                <div style={{visibility: (this.state.showNav ? "" : "hidden")}} className='nav-container'>
                     <div className='nav' onClick = {this.toggleMenu}>
-                    <Link className = {this.props.location.pathname === "/" ? "active" : ""}
-                    
-                    to="/">Home</Link>
-                    <Link className = {this.props.location.pathname === "/healthy" ? "active" : ""}
-                    
-                    to="/healthy">Healthy Recipes</Link>
-                    <Link className = {this.props.location.pathname === "/indulgent" ? "active" : ""}
-                    
-                    to="/indulgent">Indulgent Recipes</Link>
-                    <Link className = {this.props.location.pathname === "/userRecipe" ? "active" : ""} 
-               
-                    to="/userRecipe">My Recipes</Link>
-                    <Link className = {this.props.location.pathname === "/register" ? "active" : ""} 
-                    
-                    to= "register">SignIn / Register</Link>
-                    { token !== "" && <button onClick = {logout}>Logout</button>}
+                         <Link className = {this.props.location.pathname === "/" ? "active" : ""}
+                         to="/">Home</Link>
+
+                         <Link className = {this.props.location.pathname === "/healthy" ? "active" : ""}
+                         to="/healthy">Healthy Recipes</Link>
+
+                         <Link className = {this.props.location.pathname === "/indulgent" ? "active" : ""}
+                         to="/indulgent">Indulgent Recipes</Link>
+
+                         <Link className = {this.props.location.pathname === "/userRecipe" ? "active" : ""} 
+                         to="/userRecipe">My Recipes</Link>
+
+                         <Link className = {this.props.location.pathname === "/register" ? "active" : ""} 
+                         to= "register">SignIn / Register</Link>
+
+                         <Link exact to ='/' onClick ={logout}>Logout</Link>
                     </div>
                </div>
               </> 

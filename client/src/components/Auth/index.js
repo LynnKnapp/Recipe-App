@@ -31,8 +31,6 @@ class Auth extends Component {
             password: this.state.password
         }
         this.props.signup(creds)
-        this.clearInputs()
-
     }
 
     handleLoginSubmit = e => {
@@ -42,21 +40,14 @@ class Auth extends Component {
             password: this.state.password
         }
         this.props.login(creds)
-        this.clearInputs()
     }
-    clearInputs = () => {
-        this.setState({
-            username: '',
-            password: ''
-        })
-    }
-
-
+    
     render(){
         console.log(this.props)
         if(this.props.token){
-            return(<Redirect to='/' />)
+            return (<Redirect to='/' />)
         }
+        
         return(
             <div className= 'auth-form'>
                 { !this.state.toggle ? 

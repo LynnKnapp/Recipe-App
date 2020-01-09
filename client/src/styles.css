@@ -17,8 +17,6 @@ input [type=text]{
     width: 40px;
 }
 img {
-    height: 300px;
-    width: 300px;
     object-fit: cover;
     width: 70vw;
 
@@ -320,6 +318,17 @@ form{
 #root > div > div.myRecipe-container > div > div > div:nth-child(1) > div > form > select{
    font-size: 12px;
    padding-bottom: 5px;
+}
+.indulgent-cont >h1{
+    
+        font-size: 5rem;
+        margin-top: 50px;
+        text-align: center;
+}
+.healthy-display >h1{
+    font-size: 5rem;
+    margin-top: 50px;
+    text-align: center;
 }
 
 

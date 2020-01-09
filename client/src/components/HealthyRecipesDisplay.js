@@ -6,7 +6,8 @@ import HealthyRecipeList from './HealthyRecipeList.js'
 
 const HealthyRecipesDisplay = (props) => {
     return(
-        <div>
+        <div className='healthy-display'>
+            <h1>Heavenly Healthy Goodness</h1>
             <HealthyRecipeList/>
         </div>
     )
