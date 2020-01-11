@@ -82,7 +82,7 @@ class UserRecipe extends Component{
                         <button onClick={this.editToggler} 
                            >
                             Edit Recipe</button>
-                        {/* <button onClick={this.toggleForm}>Add Recipe</button> */}
+                        {/* / <button onClick={this.props.toggleForm}>Add Recipe</button>  */}
                         <button onClick={ ()=> this.props.handleDelete(this.props._id)}>Delete Recipe</button>
         
                     </div> 

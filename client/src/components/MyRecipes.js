@@ -127,7 +127,6 @@ class MyRecipes extends Component{
                 <>    
                     <div className = 'add-edit'>  
                         <h2>Add a Favorite Recipe</h2>
-                        <h3>Or Edit an Existing One</h3>
                         <button onClick={this.toggleForm}>Back to My Recipes</button>
                         <MyRecipeForm
                                 name ={this.state.name}

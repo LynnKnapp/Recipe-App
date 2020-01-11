@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lobster|Parisienne&display=swap');
+
 *{
     margin: 0;
 }
@@ -17,12 +20,13 @@ input [type=text]{
     width: 40px;
 }
 img {
-    object-fit: cover;
-    width: 70vw;
-
+    width: 100%;
     border-radius: 12px;
 }
-
+.uploaded-image{
+    width: 150px;
+    height: 150px;
+}
 .home-img {
     display: flex;
     justify-content: space-evenly;
@@ -95,14 +99,21 @@ img {
     justify-content: center;
     align-items: center;
     
-}  
+}
+
+.myRecipe-container{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+ 
 .firebase-images{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width:100%;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 
 }
 .myRecipe-container > div > div > div:nth-child(1n) > div > form > :nth-child(1n),
@@ -119,6 +130,7 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .myRecipe-container > div > div > form {
@@ -130,7 +142,7 @@ img {
 .myRecipe-container > div > div > form > :nth-child(1n){
     display: block;
     font-size: 19pt;
-    margin: 8px auto;
+    margin: 2px auto;
     padding: 6px;
 }
 form{
@@ -168,9 +180,16 @@ form{
 .add-edit{
     padding-top: 60px;
 }
+.myRecipe-container > div > div > form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    padding-top: 0;
+    margin-top: 0;
+}
 .myRecipe-container > div > div > form > :nth-child(1n){
     font-size: 12pt;
-    border: solid 5px black;
+    border: solid 2px black;
     text-align-last: center;    
     width: 100%;
 }
@@ -185,6 +204,13 @@ form{
     padding: 8px;
     margin-right: 61px;
 }
+.recipeform-container{
+    border: solid black 5px;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+}
+
 .recipeform-container > form > input[type=text]:nth-child(1){
     width: 100%;
     padding: 12px;
@@ -302,52 +328,66 @@ form{
     align-items: left;
     font-size: 22px;
     font-weight: 500;
-    /* padding-bottom:  100px; */
 }
 .recipe-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 40px;
-    padding-top: 20px;
+    padding-bottom: 5px;
     border: solid;
+    width: 70%;
 }
 .recipe-container >h4{
     font-size: 25px;
 }
-#root > div > div.myRecipe-container > div > div > div:nth-child(1) > div > form > select{
+.myRecipe-container > div > div > div:nth-child(1) > div > form > select{
    font-size: 12px;
    padding-bottom: 5px;
 }
 .header-container{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 .header {
     display: flex;
     font-size: 4rem;
     margin-top: 50px;
     text-align: center;
+    margin-left: 100px;
+    padding-left: 395px;
+}
+.header >h1{
+    font-size: 70px;
+    font-family: 'Lobster', cursive; 
+    /* font-family: 'Parisienne', cursive; */
 }
 .button{
     font-size: 1rem;
     margin-top: 50px;
     text-align: center;
+    /* padding-left: 60px; */
+    margin-left: 150px;
 }
 
 
 .indulgent-cont >h1{
-    
         font-size: 4rem;
         margin-top: 50px;
         text-align: center;
 }
-.healthy-display >h1{
-    font-size: 4rem;
-    margin-top: 50px;
-    text-align: center;
+.add-edit > button{
+    margin-left: 82px;
+    width: 50%;
+    height: 30px;
+    margin-bottom: 10px;
 }
+.add-edit >h2{
+    margin-left: 10px;
+}
+
+
 
 
 
