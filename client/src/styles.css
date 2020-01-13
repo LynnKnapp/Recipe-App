@@ -1,20 +1,20 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lobster|Parisienne&display=swap');
 
-*{
+/* *{
     margin: 0;
 }
 .app{
     margin: 0;
     padding: 0;
-}
+} */
 .form{
     
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 input [type=text]{
     width: 40px;
@@ -205,15 +205,17 @@ form{
     margin-right: 61px;
 }
 .recipeform-container{
-    border: solid black 5px;
+    border: solid black 3px;
     margin: 0;
     padding: 0;
     border-radius: 4px;
+    box-shadow: 0px 3px 2px 2px;
 }
+
 
 .recipeform-container > form > input[type=text]:nth-child(1){
     width: 100%;
-    padding: 12px;
+    padding: 3px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -223,7 +225,7 @@ form{
 }    
 .recipeform-container > form > input[type=text]:nth-child(2){
     width: 100%;
-    padding: 12px;
+    padding: 3px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -233,7 +235,7 @@ form{
 }
 .recipeform-container > form > input[type=text]:nth-child(3){
     width: 100%;
-    padding: 12px;
+    padding: 3px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -244,7 +246,7 @@ form{
 
 .recipeform-container > form > input[type=text]:nth-child(4){
     width: 100%;
-    padding: 12px;
+    padding: 3px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -260,7 +262,7 @@ form{
     box-sizing: border-box;
     resize: vertical;
     font-size: 11px;
-    text-indent: 125px;
+    text-indent: 20px;
     margin-left: 60px;
     
 
@@ -334,7 +336,9 @@ form{
     flex-direction: column;
     align-items: center;
     padding-bottom: 5px;
-    border: solid;
+    border: solid brown 4px; 
+    border-radius: 4px;
+    box-shadow: 0px 2px 8px 4px brown;
     width: 70%;
 }
 .recipe-container >h4{
@@ -381,7 +385,9 @@ form{
     margin-left: 82px;
     width: 50%;
     height: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    background-color: white;
+    text-align: center;
 }
 .add-edit >h2{
     margin-left: 10px;

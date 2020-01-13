@@ -52,7 +52,7 @@ function MyRecipeForm (props) {
                         type="file"
                         onChange={handleImageAsFile}
                     />
-                    <button>Upload Recipe Image</button>
+                    <button>Upload Image</button>
                 </form>
                 <img src={imageAsUrl.imgUrl} alt="image_tag" className='uploaded-image'/> 
                 <form className= 'form' onSubmit={(e) => props.handleSubmit(e, imageAsUrl.imgUrl)}>
