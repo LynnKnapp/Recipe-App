@@ -561,7 +561,8 @@ form{
         width: 100%
     }
     .recipe-container > h4{
-        font-size: 17px;    
+        
+        font-size: 15px;    
     }
     .recipe-container >img{
         width: 100%;
@@ -586,6 +587,9 @@ form{
     .info >h3{
         font-size: 11px;
         text-align: center;
+    }
+    .info >h4{
+        font-size: 15px;
     }
     .ingredients >h3{
         font-size: 23px;
@@ -694,9 +698,10 @@ form{
     .header {
         display: flex;
         font-size: 4rem;
-        margin-top: 50px;
+        margin-top: 30px;
+        margin-left: 0px;
         text-align: center;
-        margin-right: 100px;
+        margin-right: 270px;
         /* padding-left: 100px; */
         text-shadow: 2px 3px whitesmoke;
     }
@@ -705,11 +710,19 @@ form{
         text-align: center;
         
     }
-    .button >button{
+    .button{
         height: 7px;
         margin-left: 10px;
+        padding-bottom: 20px;
+        font-size: 11px;
+        margin-right: -6px;
+        margin-left: 0px;
     }
-    
+
+    .menu-container > div > div > button {
+        margin-left: -6px;
+        padding-bottom: 21px;
+    }
 
 
 }
