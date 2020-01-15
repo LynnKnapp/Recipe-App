@@ -20,7 +20,8 @@ class Navbar extends Component{
       render(){
           const {token, logout} = this.props
           return(
-               <>
+               <div className='menu-container'>
+                    
                  <button className="menu" onClick={this.toggleMenu}>Menu/Sign-in</button>
                     
                <div style={{visibility: (this.state.showNav ? "" : "hidden")}} className='nav-container'>
@@ -43,7 +44,7 @@ class Navbar extends Component{
                          { token !== "" && <button onClick = {logout}>Logout</button>}
                     </div>
                </div>
-              </> 
+              </div> 
           )
      }
 }     

@@ -69,10 +69,10 @@ class UserRecipe extends Component{
                 {!this.state.showRecipes ?
                 <>    
                     <img src={this.props.imgUrl} alt='recipe'/>
-                        <h4>Author: {this.props.author}</h4>
                     <div className='info'>
                         <h1>{this.props.name}</h1>
                         <h3>{this.props.description}</h3>
+                        <h4>{this.props.author}</h4>
                     </div>
                     <div className='ingredient-container'>
                         <h4>Ingredients</h4>
@@ -91,32 +91,31 @@ class UserRecipe extends Component{
                 <>
                 <div className='recipeform-container'>
                     <form className= 'recipe-form' onSubmit={this.handleSubmit}>
-                        Recipe Name<input
+                        RecipeName<input
                             type='text'
                             value={this.state.name}
                             onChange={this.handleChange}
-                            name='name'/> Author
-                        <input
+                            placeholder='Recipe Name'
+                            name='name'/> 
+                        Author<input
                             type='text'
                             value={this.state.author}
                             onChange={this.handleChange}
-                            name='author'/> Description
-                        <input
+                            placeholder='Author'
+                            name='author'/> 
+                        Description<input
                             type='text'
                             value={this.state.description}
                             onChange={this.handleChange}
-                            name='description'/>Ingredients
-                        {/* <input
-                            type='url'
-                            value={this.state.imgUrl}
-                            onChange={this.handleChange}
-                            name='imgUrl'/>Ingredients */}
-                        <input
+                            placeholder='Description'
+                            name='description'/>
+                        Ingredients<input
                             type='text'
                             value={this.state.ingredients}
                             onChange={this.handleIngredientsChange}
-                            name='ingredients'/>Diet Type 
-                        <select name='dietType' value={this.state.dietType} onChange={this.handleChange}>
+                            placeholder='Ingredients'
+                            name='ingredients'/>
+                        Diet Type<select name='dietType' value={this.state.dietType} onChange={this.handleChange}>
                             <option placeholder= 'Diet Type'>Diet Type</option>    
                             <option value="Healthy">Healthy</option>
                             <option value="Indulgent">Indulgent</option>

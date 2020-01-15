@@ -11,7 +11,8 @@
     margin: 0;
 }
 body{
-    background-image: url('https://www.greendotalaska.com/image/s-media-cache-ak0.pinimg.com/736x/14/85/09/148509207b1e6d97e29b3f99190d48d9.jpg');
+     background-image: url('https://www.greendotalaska.com/image/s-media-cache-ak0.pinimg.com/736x/14/85/09/148509207b1e6d97e29b3f99190d48d9.jpg'); 
+    /* background-image: url('https://dtkp6g0samjql.cloudfront.net/uploads/photo/file/10180057/gallery_hero_il_fullxfull.511005420_nsgb.jpg'); */
     background-size: cover;
 }
 
