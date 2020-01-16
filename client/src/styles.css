@@ -101,11 +101,12 @@ img {
     border: black solid 10px;
     margin: 0;
     padding: 0;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
   
 .myRecipe-container{
     display: flex;
+    /* min-height: 100vh; */
     justify-content: center;
     align-self: center;
     padding: 53px;
@@ -533,23 +534,21 @@ form{
 }
 
 
-
-
-
-
-
-
 @media screen and (min-width: 375px) and (max-width: 968px){
     
     .recipe-form{
-        width: 400px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 14pt;
+        font-size: 12pt;
         text-align: left;
         margin: auto;
+    }
+    
+    .recipeform-container{
+        width: 100%;
     }
     img {
         max-height: 600px;
@@ -626,7 +625,7 @@ form{
         padding-left: 25px;
         padding-right: 10px;
     } 
-    #root>div>div.nav-container>div>button, .auth-form>button, .auth-form>form>input:nth-child(1n), .myRecipe-container>div>div>div:nth-child(1n)>div>form>:nth-child(1n), button, select {
+    .nav-container>div>button, .auth-form>button, .auth-form>form>input:nth-child(1n), .myRecipe-container>div>div>div:nth-child(1n)>div>form>:nth-child(1n), button, select {
         border: 2px solid black;
         border-radius: 4px;
         font-size: 13px;
@@ -671,6 +670,9 @@ form{
     .healthy-display >h1{
         font-size: 25px;
     }
+    .indulgent-cont >h1{
+        font-size: 25px;
+    }
     ul >li{
         font-size: 12px;
     }
@@ -688,13 +690,14 @@ form{
         align-items: center;
         justify-content: center;
         padding: 0px;
+        /* height: 100vh */
     }
     .myRecipes{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 120%
+        width: 90%
     }
     .header-container{
         flex-direction: column;
@@ -713,7 +716,7 @@ form{
     .header >h1 {
         font-size: 40px;
         text-align: center;
-        margin-top: -28px;
+        margin-top: 22px;
         
     }
     .button{
@@ -729,8 +732,34 @@ form{
         margin-left: -6px;
         padding-bottom: 21px;
     }
-
-
+    .myRecipe-container > div > div > form > :nth-child(1n){
+        padding: 2px;
+        font-size: 11pt;
+    } 
+    .recipe-form > input[type=text]{
+        width: 100vw
+    } 
+    /* .myRecipe-container > div > div.mapped-recipes > div:nth-child(3) > div > form > input[type=text]:nth-child(2){
+        width: 100%
+    }
+    .myRecipe-container > div > div.mapped-recipes > div:nth-child(3) > div > form > input[type=text]:nth-child(3){
+        width: 100%
+    }
+    .myRecipe-container > div > div.mapped-recipes > div:nth-child(3) > div > form > input[type=text]:nth-child(4){
+        width: 100%
+    } */ 
+     /* .myRecipe-container > div > div.mapped-recipes > div:nth-child(3) > div > form > select{
+        width: 100%;
+        padding: 4px;
+        padding-left: 90px;
+    }
+    .myRecipe-container > div > div.mapped-recipes > div:nth-child(3) > div > form > button{
+        width: 100%;
+        padding: 4px;
+    } */ */
+    a >img {
+        margin-bottom: 23px;
+    }    
 }
 
     

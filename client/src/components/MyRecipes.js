@@ -73,7 +73,7 @@ class MyRecipes extends Component{
                     ingredients: "",
                     dietType: "",
                     recipes: [...prevState.recipes, res.data ],
-                    // showForm: false
+                
                 }))
             })
             .catch(err => console.log(err))
@@ -130,8 +130,8 @@ class MyRecipes extends Component{
                         <button onClick={this.toggleForm}>Back to My Recipes</button>
                         <MyRecipeForm
                                 name ={this.state.name}
-                                author={this.state.author}
                                 description={this.state.description}
+                                author={this.state.author}
                                 // img src={this.props.imageAsUrl.imgUrl}
                                 ingredients={this.state.ingredients}
                                 dietType={this.state.dietType}
