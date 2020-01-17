@@ -94,7 +94,9 @@ img {
     justify-content: center;
     align-items: center;
     margin: 100px;
+    width: 100%;
     /* padding-top: 25px; */
+    margin-left: 100px;
     
 }  
 .recipeform-container{
@@ -310,6 +312,7 @@ form{
     justify-content: center;
     align-items: center;
     margin-top: 40px;
+    padding-bottom: 45px;
     
 }
    
@@ -323,6 +326,7 @@ form{
     justify-content: center;
     align-items: center;
     margin-top: 40px;
+    padding-bottom: 45px;
 }
 .healthy-display >h1{
     text-shadow:2px 3px whitesmoke;
@@ -494,6 +498,7 @@ form{
     margin-right: 60px;
     height: 34px;
     font-size: 13px;
+    margin-top: -78px;
     
 }
 .recipe-container {
