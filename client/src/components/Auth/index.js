@@ -51,7 +51,7 @@ class Auth extends Component {
         return(
             <div className= 'auth-form'>
                 { !this.state.toggle ? 
-                   <> 
+                   <div className='login'> 
                         <AuthForm
                             username= {this.state.username}
                             password={this.state.password}
@@ -61,9 +61,9 @@ class Auth extends Component {
                         />
                         <p style={{color: 'blue'}}>{this.props.authErrMsg} </p>
                         <button  className='toggler-btn' onClick={this.toggler}>Already have an account?</button>
-                    </>
+                    </div>
                 : 
-                    <>
+                    <div className='signup'>
                         <AuthForm
                             username= {this.state.username}
                             password={this.state.password}
@@ -73,7 +73,7 @@ class Auth extends Component {
                         /> 
                         <button className='toggler-btn' onClick={this.toggler}> Sign-up for an account</button>
                         <p style={{color: 'red'}}>{this.props.authErrMsg} </p>
-                    </>
+                    </div>
                 }
             </div>
         )

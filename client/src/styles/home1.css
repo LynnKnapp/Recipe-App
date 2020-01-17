@@ -1,18 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Gothic+A1:600|Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Actor&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Actor|Signika+Negative&display=swap');
 
 * {
-    
+    /* background-image: url('http://www.whitburnpevsner.com/wp-content/uploads/2014/10/another-rough-old-and-worn-parchment-paper1.jpg'); */
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 .home{
+    background-image: url('http://www.whitburnpevsner.com/wp-content/uploads/2014/10/another-rough-old-and-worn-parchment-paper1.jpg'); 
     padding: 0;
     margin: 0;
 }
 body{
-     background-image: url('https://www.greendotalaska.com/image/s-media-cache-ak0.pinimg.com/736x/14/85/09/148509207b1e6d97e29b3f99190d48d9.jpg'); 
+     /* background-image: url('https://www.greendotalaska.com/image/s-media-cache-ak0.pinimg.com/736x/14/85/09/148509207b1e6d97e29b3f99190d48d9.jpg');  */
     /* background-image: url('https://dtkp6g0samjql.cloudfront.net/uploads/photo/file/10180057/gallery_hero_il_fullxfull.511005420_nsgb.jpg'); */
+    background-size: cover;
+    /* background-color: rgb(182,145,66); */
+    /* background-image: url('https://i.pinimg.com/originals/ab/f0/cf/abf0cf93a7d79403304841a3afeb4927.jpg'); */
+     
+    /* background-image: url('https://media.istockphoto.com/photos/old-stained-vintage-paper-background-picture-id485312855'); */
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -39,6 +48,7 @@ body{
     text-align: center;
     margin-top: 75px;
     font-family: 'Lobster', cursive;  
+    text-shadow: 1px 2px whitesmoke;
 }
 .sub-title{
     display: flex;
@@ -51,15 +61,18 @@ body{
     font-size: 43px;
     text-align: center;
     padding-bottom: 40px;
-    font-family: 'Gothic A1', sans-serif;
+    font-family: 'Signika Negative', sans-serif;
+    text-shadow: 1px 2px rgb(245, 245, 245);
 }
 
 .sub-title>h2{
     font-size: 40px;
+    font-weight: bold;
     /* padding-left: 200px; */
     text-align: center;
-    font-family: 'Gothic A1', sans-serif;
-    padding-bottom: 20px;    
+    font-family: 'Actor', sans-serif;
+    padding-bottom: 20px;
+    text-shadow: 1px 2px rgb(245, 245, 245);    
 }
 
 .sub-title>h3{
@@ -68,6 +81,7 @@ body{
     font-family: 'Lobster', cursive; 
     padding-top: 20px;
     padding-bottom: 40px;
+    text-shadow: 1px 2px rgb(245, 245, 245);
     
 }
 a > img{
@@ -78,6 +92,7 @@ a > img{
 .home-img{
     display: flex;
     justify-content: space-around;
+    margin-bottom: 35px;
 }
 
 .home>h4 {
