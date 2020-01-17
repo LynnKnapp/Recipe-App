@@ -49,7 +49,7 @@ class Auth extends Component {
         }
         
         return(
-            <div className= 'auth-form'>
+            <>
                 { !this.state.toggle ? 
                    <div className='login'> 
                         <AuthForm
@@ -75,7 +75,7 @@ class Auth extends Component {
                         <p style={{color: 'red'}}>{this.props.authErrMsg} </p>
                     </div>
                 }
-            </div>
+            </>
         )
     }
 }
