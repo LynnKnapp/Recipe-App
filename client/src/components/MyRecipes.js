@@ -33,6 +33,15 @@ class MyRecipes extends Component{
 
         componentDidMount(){
             this.getRecipes()
+            recipeAxios.get('/api/recipe/favorite')
+            .then(res => {
+            this.setState(prevState =>{
+                return {recipes: [...prevState.recipes, ...res.data]}
+            })
+                
+        
+        })
+        .catch(err => console.log(err))
         }
 
         toggleForm = () => {
@@ -45,8 +54,8 @@ class MyRecipes extends Component{
         getRecipes = () =>{
             recipeAxios.get("/api/recipe/userRecipe")
             .then(res => {
-                this.setState({
-                    recipes: res.data
+                this.setState(prevState =>{
+                    return {recipes: [...prevState.recipes, ...res.data]}
                 })
             })
             .catch(err =>console.log(err))

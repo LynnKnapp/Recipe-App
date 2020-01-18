@@ -1,6 +1,7 @@
 const express = require("express")
 const recipeRouter = express.Router()
 const Recipe = require("../models/recipe")
+const User = require("../models/user")
 
 
 
@@ -23,25 +24,7 @@ recipeRouter.get('/userRecipe', (req, res, next) =>{
     })
 })
 
-// recipeRouter.get('/user', (req, res, next) =>{
-//     Recipe.find({user: req.user._id}, (err, recipes) => {
-//         if(err) {
-//             res.status(500)
-//             return next(err)
-//         }
-//         res.status(200).send(recipes)
-//     })
-// })
 
-// recipeRouter.get('/myRecipe', (req, res, next) =>{
-//     Recipe.find((err, recipes) =>{
-//         if(err) {
-//             res.status(500)
-//             return next(err) 
-//         }
-//         res.status(200).send(recipes)
-//     })
-// })
 
 recipeRouter.get('/healthy', (req, res, next) =>{
     const query = { dietType: "Healthy" }
@@ -96,6 +79,36 @@ recipeRouter.put("/userRecipe/:_id", (req,res, next)=>{
             return next(err)
         }
         return res.status(201).send(recipe)
+    })
+
+})
+
+recipeRouter.put("/favorite/:_id", (req,res, next)=>{
+    User.findOneAndUpdate(
+        {_id: req.user._id}, 
+        { $push: { favorites: req.params._id } }, 
+        {new: true}, 
+        (err, recipe)=>{
+        if(err) {
+            res.status(500)
+            return next(err)
+        }
+        return res.status(201).send(recipe)
+    })
+
+})
+
+recipeRouter.get("/favorite/", (req,res, next)=>{
+    User.findOne(
+        {_id: req.user._id}, 
+        
+    ).populate('favorites').exec((err, user)=>{
+        if(err) {
+            res.status(500)
+            return next(err)
+        }
+    
+        return res.status(201).send(user.favorites)
     })
 
 })

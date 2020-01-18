@@ -21,13 +21,14 @@ class HealthyRecipeList extends Component{
 
     componentDidMount(){
         this.getHealthyRecipes()
+        
     }
 
     getHealthyRecipes = () =>{
         recipeAxios.get('/api/recipe/healthy')
         .then(res => {
-            this.setState({
-                healthyRecipes: res.data
+            this.setState(prevState =>{
+                return {healthyRecipes: [...prevState.healthyRecipes, ...res.data]}
             })
         })
         .catch(err => console.log(err))

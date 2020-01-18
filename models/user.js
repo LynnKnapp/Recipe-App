@@ -20,7 +20,12 @@ const userSchema = new Schema({
     memberSince: {
         type: Date,
         default: Date.now
-    }
+    },
+    favorites:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Recipe',
+        unique: true
+    }]
 })
 
 //presave Hook to encrypt the password

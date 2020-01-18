@@ -1,23 +1,55 @@
-import React from 'react'
+import React, {Component} from 'react'
+import axios from 'axios'
 
-const HealthyRecipe = (props) =>{
-    const mappedIngredients = props.ingredients.map(ingredient =>{
-        return <li>{ingredient}</li>
-    })
-    return(
-        <div className='recipe-container'>
-            <img src={props.imgUrl} alt='recipe'/>
-            <div className='info'>
-                <h1 className= 'text'>{props.name}</h1>
-                <h3 className= 'text'>{props.description}</h3>
-                <h4 className= 'text'>Author: {props.author}</h4>
+const favoriteAxios= axios.create()
+
+favoriteAxios.interceptors.request.use((config)=>{
+    const token = localStorage.getItem('token')
+    config.headers.Authorization = `Bearer ${token}`
+    return config
+})
+
+class HealthyRecipe extends Component{
+    
+    componentDidMount(){
+        this.addToFavorites()
+    }
+
+    addToFavorites = () => {
+            
+        favoriteAxios.put(`api/recipe/favorite/${this.props._id}`)
+            .then(res => {
+                // this.setState(prevState => ({
+                //     recipes: prevState.recipes.map(recipe => recipe._id === id ? res.data : recipe)
+                // }))
+                console.log(res.data.favorites)
+            })
+            .catch(err => console.log(err))
+            
+    }
+
+    render(){
+        const mappedIngredients = this.props.ingredients.map(ingredient =>{
+            return <li>{ingredient}</li>
+        })
+        return(
+            <div className='recipe-container'>
+                    <div className='favorite-btn'>
+                        <button onClick={this.addToFavorites}>Add to My Recipes</button>
+                    </div>
+                <img src={this.props.imgUrl} alt='recipe'/>
+                <div className='info'>
+                    <h1 className= 'text'>{this.props.name}</h1>
+                    <h3 className= 'text'>{this.props.description}</h3>
+                    <h4 className= 'text'>Author: {this.props.author}</h4>
+                </div>
+                <div className='ingredients'>  
+                    <h5 className='ingredient-text'>Ingredients</h5>
+                    <ul className= 'text'>{mappedIngredients}</ul>
+                </div>
             </div>
-            <div className='ingredients'>  
-                <h5 className='ingredient-text'>Ingredients</h5>
-                <ul className= 'text'>{mappedIngredients}</ul>
-            </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default HealthyRecipe
