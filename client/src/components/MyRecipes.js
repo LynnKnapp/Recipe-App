@@ -27,21 +27,14 @@ class MyRecipes extends Component{
                 dietType: '',
                 showForm: false,
                 showRecipes: false,
-                recipes: []
+                recipes: [],
+                favoriteRecipe: ''
             }
         }
 
         componentDidMount(){
             this.getRecipes()
-            recipeAxios.get('/api/recipe/favorite')
-            .then(res => {
-            this.setState(prevState =>{
-                return {recipes: [...prevState.recipes, ...res.data]}
-            })
-                
-        
-        })
-        .catch(err => console.log(err))
+            
         }
 
         toggleForm = () => {
@@ -50,6 +43,18 @@ class MyRecipes extends Component{
                 showForm: !prevState.showForm
             }))
         }
+        // getFavorites = () =>{
+        //     recipeAxios.get('/api/recipe/')
+        //     .then(res => {
+        //     this.setState(prevState =>{
+        //         return {recipes: [...prevState.recipes, ...res.data]}
+
+        //     })
+                
+        
+        // })
+        // .catch(err => console.log(err))
+        // }
         
         getRecipes = () =>{
             recipeAxios.get("/api/recipe/userRecipe")

@@ -24,7 +24,7 @@ class App extends Component{
                         <Route path='/healthy' component={HealthyRecipesDisplay}/>
                         <Route path='/indulgent' component={IndulgentRecipesDisplay}/>
                         <Route path='/userrecipe' component={MyRecipes}/> 
-                        {/*<Route path='/userrecipeform' component={UserRecipeForm}/>*/}
+                        {/* <Route path='/favorite' component={UserRecipeForm}/> */}
                         <Route exact path = "/register" render={rProps => <Auth {...rProps}/>}
                         />
                     </Switch>             

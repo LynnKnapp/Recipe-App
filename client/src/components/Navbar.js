@@ -38,6 +38,9 @@ class Navbar extends Component{
                          <Link className = {this.props.location.pathname === "/userrecipe" ? "active" : ""} 
                          to="/userrecipe">My Recipes</Link>
 
+                         {/* <Link className = {this.props.location.pathname === "/favorite" ? "active" : ""} 
+                         to="/favorite">My Favorites</Link> */}
+
                          <Link className = {this.props.location.pathname === "/register" ? "active" : ""} 
                          to= "register">SignIn / Register</Link>
 
