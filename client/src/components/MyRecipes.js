@@ -34,7 +34,16 @@ class MyRecipes extends Component{
 
         componentDidMount(){
             this.getRecipes()
-            
+            recipeAxios.get('/api/recipe/favorite')
+            .then(res => {
+            this.setState(prevState =>{
+                return {recipes: [...prevState.recipes, ...res.data]}
+
+            })
+                
+        
+        })
+        .catch(err => console.log(err))
         }
 
         toggleForm = () => {
@@ -43,24 +52,12 @@ class MyRecipes extends Component{
                 showForm: !prevState.showForm
             }))
         }
-        // getFavorites = () =>{
-        //     recipeAxios.get('/api/recipe/')
-        //     .then(res => {
-        //     this.setState(prevState =>{
-        //         return {recipes: [...prevState.recipes, ...res.data]}
-
-        //     })
-                
-        
-        // })
-        // .catch(err => console.log(err))
-        // }
         
         getRecipes = () =>{
             recipeAxios.get("/api/recipe/userRecipe")
             .then(res => {
                 this.setState(prevState =>{
-                    return {recipes: [...prevState.recipes, ...res.data]}
+                    return {recipes: [...prevState.recipes, res.data]}
                 })
             })
             .catch(err =>console.log(err))
@@ -86,7 +83,7 @@ class MyRecipes extends Component{
                     imgUrl: "",
                     ingredients: "",
                     dietType: "",
-                    recipes: [...prevState.recipes, res.data ],
+                    recipes: [...prevState.recipes, ...res.data ],
                 
                 }))
             })
