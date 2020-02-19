@@ -22,6 +22,7 @@ class App extends React.Component{
                         <Route path='/healthy' component={HealthyRecipesDisplay}/>
                         <Route path='/indulgent' component={IndulgentRecipesDisplay}/>
                         <Route path='/userrecipe' component={MyRecipes}/> 
+                        {/*<Route path='/userrecipeform' component={UserRecipeForm}/>*/}
                         <Route exact path = "/register" render={rProps => <Auth {...rProps}/>}
                         />
                     </Switch>             

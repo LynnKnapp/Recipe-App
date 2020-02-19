@@ -14,8 +14,8 @@ class IndulgentRecipe extends Component {
         return(
             <div className='recipe-container'>
                 <div className='favorite-btn'>
-                    <button>Add to My Recipes</button>
-                </div>
+                    <button>Add to My Recipes</button> 
+                 </div>
                 <img src={this.props.imgUrl} alt='recipe'/>
                 <div className='info'>
                     <h1 className= 'text'>{this.props.name}</h1>

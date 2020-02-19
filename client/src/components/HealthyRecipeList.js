@@ -38,6 +38,8 @@ class HealthyRecipeList extends Component{
         const mappedHealthyRecipes = this.state.healthyRecipes.map(recipe =>{
             return <HealthyRecipe healthyArr={this.state.recipe} {...recipe} key={recipe._id}/>
         })
+
+    
             return(
                 <div className='ind-recipe'>
                     {mappedHealthyRecipes}
